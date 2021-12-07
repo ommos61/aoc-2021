@@ -14,3 +14,5 @@ fi
 [ -f ./part1 ] && ./part1
 [ -f ./part2 ] && echo "---------->Running part2..."
 [ -f ./part2 ] && ./part2
+
+exit 0
