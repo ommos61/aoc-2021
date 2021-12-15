@@ -1,5 +1,3 @@
-source /usr/share/vim/vimrc
-source $HOME/.vimrc
 
 set autowrite
 
@@ -21,21 +19,11 @@ set makeprg=$HOME/src/AdventOfCode_2021/build.sh
 " ctrl-F5
 map [15;5~    :!$HOME/src/AdventOfCode_2021/run.sh
 " ctrl-F7
-map [18;5~    :make
+map [18;5~    :make<CR>:copen<CR><CR>k
 " F8
-map [19~      :cnext
+map [19~      :cnext<CR>
 " ctrl-F8
-map [19;5~    :cprevious
+map [19;5~    :cprevious<CR>
 " F9
-map [20~      :copen
-
-function! ManPage()
-    if &ft =~ "c"
-        let s:template = "%"
-    endif
-    let s:wordUnderCursor = expand("<cword>")
-    let s:cmd = "!man " . s:wordUnderCursor
-    execute s:cmd
-endfunction
-map <A-m> :call ManPage()
+map [20~      :copen<CR>
 

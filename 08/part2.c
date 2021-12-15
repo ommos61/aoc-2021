@@ -156,7 +156,7 @@ int main(int argc, char *argv[]) {
         makeReverse(reverse, digits[i]);
         char bd = maskDiff(nums[reverse[4]].mask, nums[reverse[1]].mask);
         char cf = nums[reverse[1]].mask;
-        char b = 0, d = 0;
+        char d = 0;
 
         int t = 0;
         while (t < 20) {
@@ -170,7 +170,7 @@ int main(int argc, char *argv[]) {
                     } else {
                         assert(bitCount(this->mask & bd) == 1);
                         d = this->mask & bd;
-                        b = maskDiff(this->mask & bd, bd);
+                        //b = maskDiff(this->mask & bd, bd);
 
                         if (bitCount(this->mask & cf) == 1) {
                             this->value = 2;
