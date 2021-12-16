@@ -1,6 +1,8 @@
 
-set autowrite
+set number
+set relativenumber
 
+set autowrite
 set makeprg=$HOME/src/AdventOfCode_2021/build.sh
 
 "    map QP   <F1>
