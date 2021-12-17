@@ -76,7 +76,7 @@ char *performStep(char *template) {
     char *result = malloc(2 * strlen(template));
 
     char *cptr = result;
-    for (int i = 0; i < strlen(template) - 1; i++) {
+    for (unsigned int i = 0; i < strlen(template) - 1; i++) {
         *cptr++ = template[i];
         char c;
         if ((c = getInsert(template[i], template[i + 1])) != 0) {
@@ -93,7 +93,7 @@ int main(int argc, char *argv[]) {
     char *fname = "input.txt";
 
     // when another input file is specified
-    if (argv[1] != NULL) {
+    if (argc != 1) {
         fname = argv[1];
     }
 
@@ -110,7 +110,7 @@ int main(int argc, char *argv[]) {
 
     int counts[26];
     memset(counts, 0, 26 * sizeof(int));
-    for (int i = 0; i < strlen(template); i++) {
+    for (unsigned int i = 0; i < strlen(template); i++) {
         counts[template[i] - 'A']++;
     }
     int min = INT_MAX;

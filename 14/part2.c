@@ -57,7 +57,7 @@ long pair_counts[2][NUM_CAPS][NUM_CAPS];
 int current_set = 0;
 
 void initCounts(char *template) {
-    for (int i = 0; i < strlen(template) - 1; i++) {
+    for (unsigned int i = 0; i < strlen(template) - 1; i++) {
         printf("init for '%c%c'\n", template[i], template[i + 1]);
         pair_counts[current_set][template[i] - 'A'][template[i + 1] - 'A']++;
     }
@@ -125,7 +125,7 @@ int main(int argc, char *argv[]) {
     char *fname = "input.txt";
 
     // when another input file is specified
-    if (argv[1] != NULL) {
+    if (argc != 1) {
         fname = argv[1];
     }
 

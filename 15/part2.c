@@ -115,7 +115,7 @@ int minRisk3(int x, int y) {
     while (q_size > 0) {
         int cx, cy;
         q_pop(&cx, &cy);
-        for (int n = 0; n < array_count(neighbors); n++) {
+        for (unsigned int n = 0; n < array_count(neighbors); n++) {
             int new_x = cx + neighbors[n][0];
             int new_y = cy + neighbors[n][1];
             if ((new_x >= 0) && (new_x < 5 * dim)) {
@@ -136,7 +136,7 @@ int main(int argc, char *argv[]) {
     char *fname = "input.txt";
 
     // when another input file is specified
-    if (argv[1] != NULL) {
+    if (argc != 1) {
         fname = argv[1];
     }
 

@@ -30,6 +30,8 @@ void printBoard(board *my_board) {
         printf("%-2d%s ", my_board->values[i], my_board->checks[i] ? "*" : " ");
     }
     printf("\n");
+#else
+    assert(my_board != NULL);
 #endif
 }
 
@@ -46,7 +48,7 @@ void readData(char *fname) {
     // Read the draw numbers (comma separated one a single line)
     fgets(line, LINE_LENGTH, fin);
 
-    int index = 0;
+    unsigned long index = 0;
     while (index < strlen(line)) {
         if (line[index] == ',') draw_count++;
         index++;
@@ -158,7 +160,7 @@ int main(int argc, char *argv[]) {
     char *fname = "input.txt";
 
     // When another input file is specified
-    if (argv[1] != NULL) {
+    if (argc != 1) {
         fname = argv[1];
     }
 

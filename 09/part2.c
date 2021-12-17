@@ -30,7 +30,7 @@ void readData(char *fname) {
         if (strlen(line) != 0) line[strlen(line) - 1] = 0;
 
         if (map_width == 0) map_width = strlen(line);
-        assert(map_width == strlen(line));
+        assert((unsigned)map_width == strlen(line));
 
         map[map_lines] = malloc(strlen(line) + 1);
         strcpy(map[map_lines], line);
@@ -137,7 +137,7 @@ int main(int argc, char *argv[]) {
     char *fname = "input.txt";
 
     // when another input file is specified
-    if (argv[1] != NULL) {
+    if (argc != 1) {
         fname = argv[1];
     }
 

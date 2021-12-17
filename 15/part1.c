@@ -135,7 +135,7 @@ void q_pop(int *x, int *y) {
     }
 }
 
-int minCost(int cost[DIM_MAX][DIM_MAX], int m, int n) {
+int minCost(int m, int n) {
     int dp[DIM_MAX][DIM_MAX];
     int visited[DIM_MAX][DIM_MAX];
 
@@ -152,7 +152,7 @@ int minCost(int cost[DIM_MAX][DIM_MAX], int m, int n) {
     while (q_size > 0) {
         int cx, cy;
         q_pop(&cx, &cy);
-        for (int n = 0; n < array_count(neighbors); n++) {
+        for (unsigned int n = 0; n < array_count(neighbors); n++) {
             int new_x = cx + neighbors[n][0];
             int new_y = cy + neighbors[n][1];
             if ((new_x >= 0) && (new_x < dim)) {
@@ -170,7 +170,7 @@ int minCost(int cost[DIM_MAX][DIM_MAX], int m, int n) {
 }
 
 int minRisk3(int x, int y) {
-    int result = minCost(risks, x, y);
+    int result = minCost(x, y);
 
     return result;
 }
@@ -179,7 +179,7 @@ int main(int argc, char *argv[]) {
     char *fname = "input.txt";
 
     // when another input file is specified
-    if (argv[1] != NULL) {
+    if (argc != 1) {
         fname = argv[1];
     }
 

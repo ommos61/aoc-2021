@@ -3,7 +3,7 @@
 set -e
 
 CC="clang"
-CFLAGS="-std=c99 -g -Wall -Werror -pedantic"
+CFLAGS="-std=c99 -g -Wall -Wextra -Werror -pedantic"
 
 function compile_file {
     src=$1
