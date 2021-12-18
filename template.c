@@ -9,6 +9,7 @@
 #define LINE_LENGTH 1024
 
 // TODO: Global data information
+int debug = 1; // 0 = no debug output, 1 = some extra debug output
 
 // Function to read all input data to memory
 void readData(char *fname) {
@@ -44,7 +45,7 @@ int main(int argc, char *argv[]) {
     char *fname = "input.txt";
 
     // when another input file is specified
-    if (argv[1] != NULL) {
+    if (argc != 1) {
         fname = argv[1];
     }
 
