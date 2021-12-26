@@ -25,7 +25,7 @@ function compile_day {
 }
 
 echo "Compiling all new files..."
-for d in [01][0-9]
+for d in [012][0-9]
 do
     compile_day ${d}
 done
