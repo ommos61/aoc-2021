@@ -7,6 +7,8 @@
 
 #define array_count(a) (sizeof(a)/sizeof(a[0]))
 #define LINE_LENGTH 1024
+#define MIN(a,b) (((a) < (b)) ? (a) : (b))
+#define MAX(a,b) (((a) > (b)) ? (a) : (b))
 
 // TODO: Global data information
 int debug = 1; // 0 = no debug output, 1 = some extra debug output
