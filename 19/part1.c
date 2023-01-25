@@ -34,7 +34,6 @@ void readData(char *fname) {
         exit(EXIT_FAILURE);
     }
 
-    int line_count = 0;
     char line[LINE_LENGTH];
     point points[POINTS_MAX];
     int point_count = 0;
@@ -65,8 +64,6 @@ void readData(char *fname) {
         } else {
             fprintf(stderr, "Unexpected input format '%s'.\n", line);
         }
-
-        line_count++;
     }
     if (point_count != 0) {
         printf("Saving data for scanner %d\n", scanner_id);

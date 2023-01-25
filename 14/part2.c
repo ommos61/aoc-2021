@@ -81,7 +81,7 @@ void printSet(int set_idx) {
     }
 }
 
-long performStep() {
+long performStep(void) {
     long result = 0;
 
     int new_set = (current_set + 1) % 2;
